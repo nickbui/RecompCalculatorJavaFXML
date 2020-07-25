@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MacroViewController">
+   <children>
+      <HBox layoutX="7.0" layoutY="64.0" prefHeight="29.0" prefWidth="315.0">
+         <children>
+            <Label prefHeight="29.0" prefWidth="67.0" text="Gender">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="maleRadioButton" mnemonicParsing="false" text="Male">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="femaleRadioButton" mnemonicParsing="false" text="Female" toggleGroup="$gender">
+               <HBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox layoutX="7.0" layoutY="102.0" prefHeight="38.0" prefWidth="287.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="153.0" text="Enter your Weight in kg:">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="weightText" />
+         </children>
+      </HBox>
+      <HBox layoutX="7.0" layoutY="140.0" prefHeight="38.0" prefWidth="297.0">
+         <children>
+            <Label text="Enter your Height in cm:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="heightText">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="-3.0" layoutY="180.0" prefHeight="38.0" prefWidth="297.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="129.0" text="Enter your age:">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ageText">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="364.0" layoutY="64.0" prefHeight="104.0" prefWidth="474.0">
+         <children>
+            <VBox prefHeight="131.0" prefWidth="317.0">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="181.0" text="Enter you LifeStyle Multiplier">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label text="Sedentary: Enter a number between 1.2 and 1.5" />
+                  <Label prefHeight="17.0" prefWidth="274.0" text="Light Active: Enter a number between 1.5 and 1.8" />
+                  <Label text="Moderately Active: Enter a number between 1.8 and 2.0" />
+                  <Label text="Highly Active: Enter a number between 2.0 and 2.2" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="87.0" prefWidth="153.0">
+               <children>
+                  <TextField fx:id="lifeStyleText" alignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="-3.0" layoutY="218.0" prefHeight="29.0" prefWidth="441.0">
+         <children>
+            <Label prefHeight="29.0" prefWidth="183.0" text="Enter your Body Fat Percentage:">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bodyFatPercentage" prefHeight="25.0" prefWidth="104.0">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\%" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="CROSSHAIR" />
+               </cursor>
+            </Text>
+         </children>
+      </HBox>
+      <Label layoutX="71.0" layoutY="276.0" prefHeight="17.0" prefWidth="0.0" />
+      <Button layoutX="369.0" layoutY="378.0" mnemonicParsing="false" onAction="#handleCalculateButton" prefHeight="44.0" prefWidth="119.0" text="Calculate" />
+      <Label layoutX="-137.0" layoutY="182.0" text="Label" />
+      <Label layoutX="313.0" layoutY="3.0" prefHeight="61.0" prefWidth="250.0" text="Recomp Macro Calculator ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <FontAwesomeIcon fill="#ab3b3b" glyphName="CUTLERY" layoutX="260.0" layoutY="48.0" size="40" textAlignment="CENTER" wrappingWidth="43.000006556510925" />
+      <HBox layoutX="214.0" layoutY="456.0" prefHeight="130.0" prefWidth="410.0">
+         <children>
+            <VBox prefHeight="88.0" prefWidth="287.0">
+               <children>
+                  <Label text="BMR is :">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Daily Calories is: ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label prefHeight="17.0" prefWidth="112.0" text="Lean Body Mass is:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label text="Protein Intake:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label text="Fat Intake:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label text="Carb Intake:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text fx:id="bmrText" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="calorieText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="105.13671875" />
+                  <Text fx:id="leanBodyMassText" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="proteinDisplay" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="113.13671875" />
+                  <Text fx:id="fatDisplay" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="carbDisplay" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="364.0" layoutY="182.0" prefHeight="68.0" prefWidth="206.0">
+         <children>
+            <Label prefHeight="70.0" prefWidth="114.0" text="What is your goal?">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <VBox prefHeight="95.0" prefWidth="98.0">
+               <children>
+                  <RadioButton fx:id="cutRadioButton" mnemonicParsing="false" text="Cut">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="goal" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="bulkRadioButton" mnemonicParsing="false" text="Bulk" toggleGroup="$goal">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton fx:id="maintainRadioButton" mnemonicParsing="false" text="Maintain" toggleGroup="$goal">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </RadioButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="7.0" layoutY="269.0" prefHeight="95.0" prefWidth="362.0">
+         <children>
+            <VBox prefHeight="95.0" prefWidth="175.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="183.0" text="Please choose Protein Option:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label prefHeight="20.0" prefWidth="138.0" text="(Between 1.2 and 1.6)" />
+                  <Label text="Please choose Fat Option:">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Between .20 - .35" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="proteinText" />
+                  <TextField fx:id="fatText">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
